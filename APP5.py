@@ -165,36 +165,20 @@ st.header("🧱 階段六：環境與器皿材質")
 col_env1, col_env2, col_env3 = st.columns(3)
 
 # 邏輯判斷：如果是俯拍，背景預設為無
-wall_options = ["木頭", "大理石", "布 (掛布)", "窗簾", "窗戶 (帶自然光)", "石膏", "金屬","塑膠","粉刷", "磁磚", "植物", "無"]
+wall_options = ["木頭", "大理石", "布 (掛布)", "窗簾", "窗戶 (帶自然光)", "石膏", "粉刷", "磁磚", "植物", "無"]
 default_wall = "無" if angle == "俯拍" else "粉刷"
 
 with col_env1:
-    table_mat = st.selectbox("桌面材質", ["木頭", "大理石", "布 (桌巾/襯布)", "石膏", "粉刷", "岩石", "金屬","塑膠", "玻璃", "磁磚", "陶瓷", "水泥"])
-    # 新增顏色選擇器
-    table_color_hex = st.color_picker("桌面主色調", "#4A3728") 
-    table_color_desc = st.text_input("桌面顏色詳細描述", placeholder="例如：胡桃木、深厚紋理...")
-    # 組合顏色資訊供後續提詞使用
-    table_color = f"{table_color_hex} ({table_color_desc})" if table_color_desc else table_color_hex
-
+    table_mat = st.selectbox("桌面材質", ["木頭", "大理石", "布 (桌巾/襯布)", "石膏", "粉刷", "岩石", "玻璃", "磁磚", "陶瓷", "水泥"])
+    table_color = st.text_input("桌面顏色描述", placeholder="例如：胡桃木色、深灰色...")
 with col_env2:
     wall_mat = st.selectbox("背景材質 (俯拍時自動設為無)", wall_options, index=wall_options.index(default_wall))
-    # 新增顏色選擇器
-    wall_color_hex = st.color_picker("背景主色調", "#00416b")
-    wall_color_desc = st.text_input("背景顏色詳細描述", placeholder="例如：米白色or紋理強烈...")
-    # 組合顏色資訊
-    wall_color = f"{wall_color_hex} ({wall_color_desc})" if wall_color_desc else wall_color_hex
-
+    wall_color = st.text_input("背景顏色描述", placeholder="例如：米白色、深綠色...")
 with col_env3:
-    ware_mat = st.selectbox("器皿材質", ["陶器 (手作質感)", "瓷器 (精緻亮面)", "玻璃 (通透反射)", "金屬 (冷冽感)", "木質 (自然感)", "塑膠", "琺瑯", "無"])
-    wall_color_hex = st.color_picker("器皿色調", "#63676d")
-    ware_detail = st.text_input("器皿細節描述", placeholder="例如：霧面 方形盤...")
+    ware_mat = st.selectbox("器皿材質", ["陶器 (手作質感)", "瓷器 (精緻亮面)", "玻璃 (通透反射)", "金屬 (冷冽感)", "木質 (自然感)", "琺瑯", "無"])
+    ware_detail = st.text_input("器皿細節描述", placeholder="例如：啞光黑 方形盤...")
 
 st.markdown("---")
-
-
-
-
-
 
 # 備註
 st.header("📝 階段七：額外敘事備註")
