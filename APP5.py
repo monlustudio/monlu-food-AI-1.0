@@ -130,7 +130,7 @@ with col_human1:
 human_action = "無特定動作"
 if human_presence == "僅手部動作":
     with col_human2:
-        human_action = st.selectbox("👉 請選擇手部具體動作", ["正在淋醬汁 / 擠檸檬", "正在用叉子/筷子夾起食物", "正在撒下調味料 / 糖粉", "手持餐具準備開動", "正在用刀切開食物", "手指輕觸盤緣 (微調位置)"])
+        human_action = st.selectbox("👉 請選擇手部具體動作", ["正在淋醬汁 / 擠檸檬", "正在用叉子/筷子夾起食物", "正在撒下調味料 / 糖粉", "手持餐具準備開動", "拿著食物", "正在用刀切開食物", "手指輕觸盤緣 (微調位置)"])
 else:
     with col_human2:
         st.write("ℹ️ 此模式下將由 AI 自動分配人物姿態。")
